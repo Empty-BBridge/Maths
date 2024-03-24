@@ -1,0 +1,32 @@
+import javax.swing.*;
+import java.awt.event.*;
+public class Calculator extends JFrame implements ActionListener{
+  private JLabel total;
+  private JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b0;
+
+  public Calculator(){
+    setLayout(null);
+
+    b1 = new JLabel("1");
+    b1.setBounds(50,5,30,30);
+    add(b1);
+    b1.addActionListener(this);
+
+    b2 = new JLabel("2");
+    b1.setBounds(50,35,30,30);
+    add(b2);
+    b2.addActionListener(this);
+  }
+
+  public void actionPerformed(ActionEvent event){
+ 
+  }
+
+  public static void main(String args[]){
+    Calculator c = new Calculator();
+    c.setBounds(0,0,300,400);
+    c.setVisible(true);
+    c.setResizable(false);
+    c.setLocationRelativeTo(null);
+  }
+}
