@@ -1,30 +1,157 @@
 import javax.swing.*;
 import java.awt.event.*;
-public class Calculator extends JFrame implements ActionListener{
+import java.awt.*;
+public class Pro extends JFrame implements ActionListener{
   private JLabel total;
-  private JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b0;
+  private JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b0,bb,bs,br,bm,bd,equal,bdelete;
 
-  public Calculator(){
+  public Pro(){
     setLayout(null);
+    getContentPane().setBackground(new Color(0,0,0));
+    
+    setTitle("CALCULATOR");
+    
+    total = new JLabel("0");
+    total.setBounds(220,15,50,50);
+    total.setForeground(new Color(255,255,255));
+    add(total);
+    total.setFont(new Font("Arial", 1, 28));
 
-    b1 = new JLabel("1");
-    b1.setBounds(50,5,30,30);
+    bdelete = new JButton("D");
+    bdelete.setBounds(185,80,50,50);
+    bdelete.setBackground(new Color(255,255,255));
+    bdelete.setForeground(new Color(168,12,41));
+    add(bdelete);
+
+    
+    b1 = new JButton("1");
+    b1.setBounds(20,80,50,50);
     add(b1);
+    b1.setFont(new Font("Arial", 1, 25));
     b1.addActionListener(this);
+    b1.setBackground(new Color(168,12,41));
+    b1.setForeground(new Color(255,255,255));
 
-    b2 = new JLabel("2");
-    b1.setBounds(50,35,30,30);
+    b2 = new JButton("2");
+    b2.setBounds(75,80,50,50);
+    b2.setFont(new Font("Arial", 1, 25));
+    b2.setBackground(new Color(168,12,41));
+    b2.setForeground(new Color(255,255,255));
     add(b2);
     b2.addActionListener(this);
-  }
+    
+    b3 = new JButton("3");
+    b3.setBounds(130,80,50,50);
+    b3.setFont(new Font("Arial", 1, 25));
+    b3.setBackground(new Color(168,12,41));
+    b3.setForeground(new Color(255,255,255));
+    add(b3);
 
+    
+    b4 = new JButton("4");
+    b4.setBounds(20,135,50,50);
+    b4.setFont(new Font("Arial", 1, 25));
+    b4.setBackground(new Color(168,12,41));
+    b4.setForeground(new Color(255,255,255));
+    add(b4);
+
+    
+    b5 = new JButton("5");
+    b5.setBounds(75,135,50,50);
+    b5.setFont(new Font("Arial", 1, 25));
+    b5.setBackground(new Color(168,12,41));
+    b5.setForeground(new Color(255,255,255));
+    add(b5);
+
+    
+    b6 = new JButton("6");
+    b6.setBounds(130,135,50,50);
+    b6.setFont(new Font("Arial", 1, 25));
+    b6.setBackground(new Color(168,12,41));
+    b6.setForeground(new Color(255,255,255));
+    add(b6);
+
+    
+    bs = new JButton("+");
+    bs.setBounds(185,135,50,50);
+    bs.setFont(new Font("Arial", 1, 25));
+    bs.setBackground(new Color(255,255,255));
+    bs.setForeground(new Color(168,12,41));
+    add(bs);
+    bs.addActionListener(this);
+    
+    b7 = new JButton("7");
+    b7.setBounds(20,190,50,50);
+    b7.setFont(new Font("Arial", 1, 25));
+    b7.setBackground(new Color(168,12,41));
+    b7.setForeground(new Color(255,255,255));
+    add(b7);
+
+    
+    b8 = new JButton("8");
+    b8.setBounds(75,190,50,50);
+    b8.setFont(new Font("Arial", 1, 25));
+    b8.setBackground(new Color(168,12,41));
+    b8.setForeground(new Color(255,255,255));
+    add(b8);
+
+    
+    b9 = new JButton("9");
+    b9.setBounds(130,190,50,50);
+    b9.setFont(new Font("Arial", 1, 25));
+    b9.setBackground(new Color(168,12,41));
+    b9.setForeground(new Color(255,255,255));
+    add(b9);
+
+    
+    br = new JButton("-");
+    br.setBounds(185,190,50,50);
+    br.setFont(new Font("Arial", 1, 25));
+    br.setBackground(new Color(255,255,255));
+    br.setForeground(new Color(168,12,41));
+    add(br);
+
+    
+    b0 = new JButton("0");
+    b0.setBounds(20,245,50,50);
+    b0.setFont(new Font("Arial", 1, 25));
+    b0.setBackground(new Color(168,12,41));
+    b0.setForeground(new Color(255,255,255));
+    add(b0);
+
+    
+    bm = new JButton("*");
+    bm.setBounds(75,245,50,50);
+    bm.setFont(new Font("Arial", 1, 25));
+    bm.setBackground(new Color(255,255,255));
+    bm.setForeground(new Color(168,12,41));
+    add(bm);
+
+    
+    bd = new JButton("/");
+    bd.setBounds(130,245,50,50);
+    bd.setFont(new Font("Arial", 1, 25));
+    bd.setBackground(new Color(255,255,255));
+    bd.setForeground(new Color(168,12,41));
+    add(bd);
+
+    
+    equal = new JButton("=");
+    equal.setBounds(185,245,50,50);
+    equal.setBackground(new Color(255,255,255));
+    equal.setForeground(new Color(168,12,41));
+    add(equal);
+    equal.setFont(new Font("Arial", 1, 25));
+    equal.addActionListener(this);
+
+  }
+  
   public void actionPerformed(ActionEvent event){
- 
   }
 
   public static void main(String args[]){
-    Calculator c = new Calculator();
-    c.setBounds(0,0,300,400);
+    Pro c = new Pro();
+    c.setBounds(0,0,275,400);
     c.setVisible(true);
     c.setResizable(false);
     c.setLocationRelativeTo(null);
