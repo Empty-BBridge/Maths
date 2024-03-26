@@ -1,0 +1,258 @@
+//import libraries
+import javax.swing.*;
+import java.awt.event.*;
+import javax.swing.event.*;
+import java.awt.*;
+
+//create our class and the elements it'll have
+public class Pro extends JFrame implements ActionListener{
+    private JLabel l1, l2;
+    private JTextField text1, text2, text3;
+    private JButton bs,br,bm,bd,eraser;
+    private JMenuItem mi1, mi2, mi3, end;
+    private JMenuBar mb;
+    private JMenu menu1, options;
+    
+    //start with giving methods to our components
+    public Pro(){
+        setLayout(null);
+        
+        //first with the back color and the menus
+        getContentPane().setBackground(new Color(0,0,0));
+        mb = new JMenuBar();
+        mb.setBackground(new Color(20,20,20));
+        setJMenuBar(mb);
+        
+        menu1 = new JMenu("Theme");
+        menu1.setForeground(new Color(254,196,0));
+        mb.add(menu1);
+        
+        mi1 = new JMenuItem("scarlet");
+        mi1.setForeground(new Color(254,196,0));
+        mi1.setBackground(new Color(20,20,20));
+        menu1.add(mi1);
+        mi1.addActionListener(this);
+        
+        mi2 = new JMenuItem("day");
+        mi2.setForeground(new Color(254,196,0));
+        mi2.setBackground(new Color(20,20,20));
+        menu1.add(mi2);
+        mi2.addActionListener(this);
+        
+        mi3 = new JMenuItem("night");
+        mi3.setForeground(new Color(254,196,0));
+        mi3.setBackground(new Color(20,20,20));
+        menu1.add(mi3);
+        mi3.addActionListener(this);
+        
+        options = new JMenu("Options");
+        options.setForeground(new Color(254,196,0));
+        mb.add(options);
+        
+        end = new JMenuItem("End");
+        end.setForeground(new Color(254,196,0));
+        end.setBackground(new Color(20,20,20));
+        options.add(end);
+        
+        //then we follow with the labels and the fields
+        l1 = new JLabel("first number");
+        l1.setBounds(50,10,100,30);
+        l1.setForeground(new Color(254,196,0));
+        add(l1);
+        
+        text1 = new JTextField();
+        text1.setBounds(40,40,100,30);
+        text1.setFont(new Font("", 1, 14));
+        add(text1);
+        
+        l2 = new JLabel("second number");
+        l2.setBounds(190,10,100,30);
+        l2.setForeground(new Color(254,196,0));
+        add(l2);
+        
+        text2 = new JTextField();
+        text2.setBounds(180,40,100,30);
+        text2.setFont(new Font("", 1, 14));
+        add(text2);
+        
+        text3 = new JTextField();
+        text3.setBounds(40,80,240,30);
+        text3.setFont(new Font("", 1, 14));
+        add(text3);
+        
+        bs = new JButton("+");
+        bs.setBounds(40,120,50,50);
+        bs.setFont(new Font("", 1, 18));
+        bs.setForeground(new Color(254,196,0));
+        bs.setBackground(new Color(20,20,20));
+        add(bs);
+        bs.addActionListener(this);
+        
+        br = new JButton("-");
+        br.setBounds(103,120,50,50);
+        br.setFont(new Font("", 1, 18));
+        br.setForeground(new Color(254,196,0));
+        br.setBackground(new Color(20,20,20));
+        add(br);
+        br.addActionListener(this);
+        
+        bm = new JButton("x");
+        bm.setBounds(167,120,50,50);
+        bm.setFont(new Font("", 1, 18));
+        bm.setForeground(new Color(254,196,0));
+        bm.setBackground(new Color(20,20,20));
+        add(bm);
+        bm.addActionListener(this);
+        
+        bd = new JButton("/");
+        bd.setBounds(230,120,50,50);
+        bd.setFont(new Font("", 1, 18));
+        bd.setForeground(new Color(254,196,0));
+        bd.setBackground(new Color(20,20,20));
+        add(bd);
+        bd.addActionListener(this);
+        
+        eraser = new JButton("Er");
+        eraser.setBounds(210,180,70,50);
+        eraser.setFont(new Font("", 1, 18));
+        eraser.setForeground(new Color(254,196,0));
+        eraser.setBackground(new Color(20,20,20));
+        add(eraser);
+        eraser.addActionListener(this);
+        
+        
+    }
+    
+    //lets follow with the method of actions
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource() == mi1){
+            getContentPane().setBackground(new Color(179,15,30));
+            mb.setBackground(new Color(207,30,46));
+            menu1.setBackground(new Color(207,30,46));
+            menu1.setForeground(new Color(255,255,255));
+            mi1.setBackground(new Color(207,30,46));
+            mi2.setBackground(new Color(207,30,46));
+            mi3.setBackground(new Color(207,30,46));
+            mi1.setForeground(new Color(255,255,255));
+            mi2.setForeground(new Color(255,255,255));
+            mi3.setForeground(new Color(255,255,255));
+            
+            l1.setForeground(new Color(255,255,255));
+            l2.setForeground(new Color(255,255,255));
+            
+            options.setForeground(new Color(255,255,255));
+            end.setBackground(new Color(207,30,46));
+            end.setForeground(new Color(255,255,255));
+            
+            bs.setForeground(new Color(0,0,0));
+        bs.setBackground(new Color(243,147,147));
+        br.setForeground(new Color(0,0,0));
+        br.setBackground(new Color(243,147,147));
+        bm.setForeground(new Color(0,0,0));
+        bm.setBackground(new Color(243,147,147));
+        bd.setForeground(new Color(0,0,0));
+        bd.setBackground(new Color(243,147,147));
+        eraser.setForeground(new Color(0,0,0));
+        eraser.setBackground(new Color(243,147,147));
+        }else if(e.getSource() == mi2){
+            getContentPane().setBackground(new Color(255,255,255));
+            mb.setBackground(new Color(78,194,238));
+            menu1.setBackground(new Color(78,194,238));
+            menu1.setForeground(new Color(0,0,0));
+            mi1.setBackground(new Color(78,194,238));
+            mi2.setBackground(new Color(78,194,238));
+            mi3.setBackground(new Color(78,194,238));
+            mi1.setForeground(new Color(0,0,0));
+            mi2.setForeground(new Color(0,0,0));
+            mi3.setForeground(new Color(0,0,0));
+            
+            bs.setBackground(new Color(78,194,238));
+            bs.setForeground(new Color(0,0,0));
+            br.setBackground(new Color(78,194,238));
+            br.setForeground(new Color(0,0,0));
+            bm.setBackground(new Color(78,194,238));
+            bm.setForeground(new Color(0,0,0));
+            bd.setBackground(new Color(78,194,238));
+            bd.setForeground(new Color(0,0,0));
+            eraser.setBackground(new Color(78,194,238));
+            eraser.setForeground(new Color(0,0,0));
+            
+            l1.setBackground(new Color(78,194,238));
+            l1.setForeground(new Color(0,0,0));
+            l2.setBackground(new Color(78,194,238));
+            l2.setForeground(new Color(0,0,0));
+            
+            options.setForeground(new Color(0,0,0));
+            end.setBackground(new Color(78,194,238));
+            end.setForeground(new Color(0,0,0));
+            
+        }else if(e.getSource() == mi3){
+            getContentPane().setBackground(new Color(0,0,0));
+            mb.setBackground(new Color(20,20,20));
+            menu1.setBackground(new Color(20,20,20));
+            menu1.setForeground(new Color(254,196,0));
+            mi1.setBackground(new Color(20,20,20));
+            mi2.setBackground(new Color(20,20,20));
+            mi3.setBackground(new Color(20,20,20));
+            mi1.setForeground(new Color(254,196,0));
+            mi2.setForeground(new Color(254,196,0));
+            mi3.setForeground(new Color(254,196,0));
+            
+            bs.setForeground(new Color(254,196,0));
+        bs.setBackground(new Color(20,20,20));
+        br.setForeground(new Color(254,196,0));
+        br.setBackground(new Color(20,20,20));
+        bm.setForeground(new Color(254,196,0));
+        bm.setBackground(new Color(20,20,20));
+        bd.setForeground(new Color(254,196,0));
+        bd.setBackground(new Color(20,20,20));
+        eraser.setForeground(new Color(254,196,0));
+        eraser.setBackground(new Color(20,20,20));
+        
+        options.setForeground(new Color(254,196,0));
+        end.setForeground(new Color(254,196,0));
+        end.setBackground(new Color(20,20,20));
+        
+        }
+        
+        //put functions to the math buttons 
+        if(e.getSource() == bs){
+            int number1 = 0, number2 = 0, number3 = 0;
+            number1 = Integer.parseInt(text1.getText());
+            number2 = Integer.parseInt(text2.getText());
+            number3 = number1 + number2;
+            text3.setText(number3+"");
+        }else if(e.getSource() == br){
+            int number1 = 0, number2 = 0, number3 = 0;
+            number1 = Integer.parseInt(text1.getText());
+            number2 = Integer.parseInt(text2.getText());
+            number3 = number1 - number2;
+            text3.setText(number3+"");
+        }else if(e.getSource() == bm){
+            int number1 = 0, number2 = 0, number3 = 0;
+            number1 = Integer.parseInt(text1.getText());
+            number2 = Integer.parseInt(text2.getText());
+            number3 = number1 * number2;
+            text3.setText(number3+"");
+        }else if(e.getSource() == bd){
+            int number1 = 0, number2 = 0, number3 = 0;
+            number1 = Integer.parseInt(text1.getText());
+            number2 = Integer.parseInt(text2.getText());
+            number3 = number1 / number2;
+            text3.setText(number3+"");
+        }else if(e.getSource() == eraser){
+            text1.setText("");
+            text2.setText("");
+            text3.setText("");
+        }
+        
+    }
+    
+    public static void  main(String args[]){
+        Pro p = new Pro();
+        p.setBounds(0,0,350,300);
+        p.setVisible(true);
+        p.setResizable(false);
+        p.setLocationRelativeTo(null);
+    }
+}
