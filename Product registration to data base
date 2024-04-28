@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>productos</title>
+    <style>
+        body{
+            background-image: url(https://ak.picdn.net/shutterstock/videos/6268493/thumb/1.jpg);
+        }
+        form{
+            background-color: rgb(244,244,244);
+            max-width: fit-content;
+            padding: 50px 20px;
+            border-radius: 5px;
+            margin-left: 50%;
+            margin-top: 10em;
+            transform: translate(-50%);
+            position: absolute;
+        }
+        #satis{
+            background-color: rgb(244,244,244);
+            position: absolute;
+            margin-left: 32em;
+            width: 20em;
+            margin-top: 22em;
+        }
+    </style>
+</head>
+<body>
+    <form action="trece.php" method="post">
+        <label>Nombre del producto</label>
+        <input type="text" name="nombre" placeholder="producto">
+        <br><br>
+        <label>Precio</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <input type="number" name="precio" placeholder="20000">
+        <br><br>
+        <label>Categoría</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+        <select name="categoria">
+            <option name="alimento">Alimento</option>
+            <option name="limpieza">Limpieza</option>
+            <option name="ropa">Ropa</option>
+        </select>
+        <br><br>
+        <input type="submit" name="enviar" value="registrar producto">
+    </form>
+    <?php
+    $enlacealocalhost = mysqli_connect("localhost", "root", "", "formulario");
+    if(isset($_POST['enviar'])){
+        $nombre = trim($_POST['nombre']);
+        $precio = trim($_POST['precio']);
+        $categoria = $_POST['categoria'];
+        $consulta = " INSERT INTO productos(nombre, precio, categoria)
+        VALUES('$nombre', '$precio', '$categoria')";
+        $resultado = mysqli_query($enlacealocalhost, $consulta);
+        echo '<div id="satis">' ."los detalles del producto han sido registrados satisfacteoriamente" . '</div>';
+    }
+    ?>
+</body>
+</html>
+
+--CREACIÓN DE BASE DE DATOS EN SQL--
+
+CREATE DATABASE formulario;
+
+USE formulario;
+
+CREATE TABLE productos(
+  id_producto INT PRIMARY KEY,
+  nombre VARCHAR(50),
+  precio INT(50),
+  categoria VARCHAR(50)
+);
+
